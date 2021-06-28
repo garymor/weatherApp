@@ -11,6 +11,7 @@ weatherform.addEventListener('submit',(e)=>{
 
 function spread(data){
     displayJson = ''
+    try {
     Object.entries(data.current).forEach(obj => {
         currntTxt = ''
         Object.values(obj).forEach((val,indx) =>{
@@ -21,5 +22,8 @@ function spread(data){
     })
     Jweather.innerText = displayJson;
     Jweather.style.display="block"
-
+    } catch(err){
+        Jweather.innerText = ' hmmm somthing went wrong / try inserting a country / or do it right this time .';
+        Jweather.style.display="block" 
+    }
 }
