@@ -34,7 +34,6 @@ app.get('/weather',(req,res) =>{
      
      weather(location).then(val => {
         res.setHeader('Content-Type', 'application/json');
-        console.log(JSON.stringify(val))
         res.json(JSON.stringify(val))
         })
      
